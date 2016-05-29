@@ -2,11 +2,111 @@
 @import 'material';
 
 * {
-	font-family: roboto;
-	font-weight: normal;
+  font-family: roboto;
+  font-weight: normal;
 }
 
 .jsonTextInput .card{
-	width: 49%;
-	box-sizing: border-box;
+  width: 49%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.jsonRendered .card{
+  width: 49%;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2%;
+}
+
+footer {
+  display: block;
+  clear: both;
+}
+
+.exapandable{
+  display: none;
+}
+
+.object {
+  .object {
+    border-left: 1px dotted black;
+    padding-left: 14px;
+    margin-top: 2px;
+    position: relative;
+
+    > .exapandable {
+      position: absolute;
+      border: 1px solid black;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      left: -6.5px;
+      top: 3px;
+      cursor: pointer;
+      display: block !important;
+
+      * {
+        cursor: pointer;
+      }
+
+      label {
+        position: absolute;
+        top: -3px;
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        left: -0.5px;
+      }
+
+      .plusSymbol {
+        top: -2px;
+        left: 0.3;
+      }
+    }
+
+    .contentType {
+      color: #aaa;
+      font-weight: normal;
+      font-style: italic;
+      text-transform: capitalize;
+    }
+
+    .joiner {
+      width: 11px;
+      height: 8px;
+      float: left;
+      margin-left: -15px;
+      border-bottom: 1px dotted black;
+    }
+  }
+}
+
+textarea,
+.jsonRendered .content * {
+  font-size: 14px;
+  font-family: monospace;
+
+  .key {
+    color: #3F00F1;
+  }
+
+  .number {
+    color: red;
+  }
+
+  .string {
+    color: green;
+  }
+
+  .boolean {
+    font-weight: bold;
+  }
+
+  .array {
+    > .key {
+      color: orange !important;
+    }
+  }
 }
